@@ -1,0 +1,7 @@
+@font-face {
+    font-family: 'blippo';
+    src: local('blippo'),
+         url('blippo_blk_bt.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+  }
