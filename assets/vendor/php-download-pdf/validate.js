@@ -124,42 +124,7 @@
   });
 
   function php_email_form_submit(this_form, action, data) {
-    $.ajax({
-      type: "POST",
-      url: action,
-      data: data,
-      timeout: 40000
-    }).done( function(msg){      
-      console.log(msg);
-      filename = 'peluches_alfa_2021.pdf';
-
-      var blob = new Blob([msg], {type: "application/pdf"});
-      var link = document.createElement('a');
-      link.href = window.URL.createObjectURL(blob);
-      link.download = filename;
-      document.body.appendChild(link);
-      link.click();
-      document.body.removeChild(link);
-      
-    }).fail( function(data){
-      console.log(data);
-      var error_msg = "¡El envío del formulario falló!<br>";
-      if(data.statusText || data.status) {
-        error_msg += 'Status:';
-        if(data.statusText) {
-          error_msg += ' ' + data.statusText;
-        }
-        if(data.status) {
-          error_msg += ' ' + data.status;
-        }
-        error_msg += '<br>';
-      }
-      if(data.responseText) {
-        error_msg += data.responseText;
-      }
-      this_form.find('.loading').slideUp();
-      this_form.find('.error-message').slideDown().html(error_msg);
-    });
+    document.location = action;
   }
 
 })(jQuery);
