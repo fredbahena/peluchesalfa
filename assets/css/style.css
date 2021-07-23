@@ -47,7 +47,7 @@
 
 @media (max-width: 768px) {
   .img-mayoreo1 {
-    background-position: right -190px center !important;
+    background-position: right -190px top !important;
   }
 }
 
@@ -217,7 +217,7 @@
 @media (max-width: 768px) {
   .txt-mayoreo1-2 {
     left: -10px;
-    top: 150px;
+    top: 120px;
   }
 }
 
@@ -238,18 +238,16 @@
 }
 
 .txt-mayoreo2-2 {
-  color: #fff;
-  font-size: 50px;
-  left: -10px;
-  position: relative;              
-  top: 1px; 
+  color:#775e9d !important; 
+  font-size: 32px;
+  left: -170px;
+  position: relative; 
 }
 
 @media (max-width: 768px) {
   .txt-mayoreo2-2 {
-    font-size: 50px;
-    left: -10px;            
-    top: 1px; 
+    left: -10px;
+    top: 50px;
   }
 }
 
