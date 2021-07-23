@@ -26,8 +26,6 @@
         //Read the size of the file
         readfile($url,true);
 
-        //Terminate from the script
-        die();
     } else {
         $msg = "El archivo no está cargado";
         die( $msg );
