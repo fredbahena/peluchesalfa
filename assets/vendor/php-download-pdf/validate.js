@@ -131,8 +131,16 @@
       timeout: 40000
     }).done( function(msg){      
       console.log(msg);
+      filename = 'peluches_alfa_2021.pdf';
+
       var blob = new Blob([msg], {type: "application/pdf"});
-      saveAs(blob, 'peluches_alfa_2021.pdf');
+      var link = document.createElement('a');
+      link.href = window.URL.createObjectURL(blob);
+      link.download = filename;
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+      
     }).fail( function(data){
       console.log(data);
       var error_msg = "¡El envío del formulario falló!<br>";
