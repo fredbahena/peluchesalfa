@@ -52,12 +52,12 @@
 
       <nav class="nav-menu d-none d-lg-block">
         <ul>
-          <li class="active"><a href="index.html#hero">Inicio</a></li>
+          <li><a href="index.html#hero">Inicio</a></li>
           <li><a href="index.html#about">Quiénes somos</a></li>
           <li><a href="mayoreo.html">Mayoreo</a></li>               
           <li><a href="proyectos.html">Proyectos</a></li>
           <li><a href="tienda.html">Tienda Física</a></li>
-          <li><a href="contacto.html">Contacto</a></li>          
+          <li class="active"><a href="contacto.html">Contacto</a></li>          
         </ul>
       </nav><!-- .nav-menu -->
 
@@ -72,19 +72,11 @@
 
       <div class="carousel-inner" role="listbox">
 
-        <div class="carousel-item active" style="background-image: url(assets/img/contacto/contacto1.png)">
+        <div class="carousel-item active img-contacto1">
           <div class="carousel-container">
             <div class="container">
-              <h2 class="animate__animated animate__fadeInDown" style="color: #775e9d;
-              font-size: 90px;
-              left: -150px;
-              position: relative;
-              top: 5px;"><span>LLÁMANOS O<br>ESCRÍBENOS</span></h2>
-              <p class="animate__animated animate__fadeInUp" style="color: #fff;
-              font-size: 50px;
-              left: -150px;
-              position: relative;
-              top: -20px;">ESTAMOS PARA<br>SERVIRTE</p>              
+              <h2 class="animate__animated animate__fadeInDown txt-contacto1"><span>LLÁMANOS O<br>ESCRÍBENOS</span></h2>
+              <p class="animate__animated animate__fadeInUp txt-contacto1-2">ESTAMOS PARA<br>SERVIRTE</p>              
             </div>
           </div>
         </div>
@@ -121,21 +113,25 @@
               <div class="address">
                 <i class="icofont-google-map"></i>
                 <h4>Ubicación:</h4>
-                <p>Toluca, Estado de México, México</p>
+                <p class="font-clean">Felipe Carrillo Puerto 107 <br>
+                  52060 <br> 
+                  Xonacatlán <br>
+                  Estado de México<br>
+                  México</p>
               </div>
              
 
               <div class="email">
                 <a href="mailto:alfapeluches@gmail.com"><i class="icofont-envelope"></i></a>
                 <h4>Email:</h4>
-                <p>alfapeluches@gmail.com</p>
+                <p class="font-clean">alfapeluches@gmail.com</p>
               </div>
               
               
               <div class="phone">
                 <a href="tel:+527228919880"><i class="icofont-phone"></i></a>
                 <h4>Teléfono:</h4>
-                <p>722 891 9880</p>
+                <p class="font-clean">722 891 9880</p>
               </div>
 
               <iframe src="https://maps.google.com/maps?q=Felipe%20Carrillo%20Puerto%20107,%20Xonacatlan%20de%20Vicencio,%20Xonacatl%C3%A1n,%20M%C3%A9x.&t=&z=17&ie=UTF8&iwloc=&output=embed" frameborder="0" style="border:0; width: 100%; height: 290px;" allowfullscreen></iframe>
@@ -149,27 +145,27 @@
               <div class="form-row">
                 <div class="form-group col-md-6">
                   <label for="name">Tu Nombre</label>
-                  <input type="text" name="name" class="form-control" id="name" data-rule="minlen:4" data-msg="Tu Nombre debe tener al menos 4 caracteres" />
+                  <input type="text" name="name" class="form-control font-clean" id="name" data-rule="minlen:4" data-msg="Tu Nombre debe tener al menos 4 caracteres" />
                   <div class="validate"></div>
                 </div>
                 <div class="form-group col-md-6">
                   <label for="name">Tu Email</label>
-                  <input type="email" class="form-control" name="email" id="email" data-rule="email" data-msg="Introduce un Email válido" />
+                  <input type="email" class="form-control font-clean" name="email" id="email" data-rule="email" data-msg="Introduce un Email válido" />
                   <div class="validate"></div>
                 </div>
               </div>
               <div class="form-group">
                 <label for="name">Asunto</label>
-                <input type="text" class="form-control" name="subject" id="subject" data-rule="minlen:4" data-msg="El Asunto debe tener al menos 8 caracteres" />
+                <input type="text" class="form-control font-clean" name="subject" id="subject" data-rule="minlen:4" data-msg="El Asunto debe tener al menos 8 caracteres" />
                 <div class="validate"></div>
               </div>
               <div class="form-group">
                 <label for="name">Mensaje</label>
-                <textarea class="form-control" name="message" rows="10" data-rule="required" data-msg="Escríbenos algo..."></textarea>
+                <textarea class="form-control font-clean" name="message" rows="10" data-rule="required" data-msg="Escríbenos algo..."></textarea>
                 <div class="validate"></div>
               </div>
               <div class="mb-3">
-                <div class="loading">Loading</div>
+                <div class="loading">Cargando...</div>
                 <div class="error-message"></div>
                 <div class="sent-message">Tu mensaje se ha enviado correctamente. ¡Gracias!</div>
               </div>
@@ -192,7 +188,7 @@
       <div class="row justify-content-center">
         <div class="col-lg-6">
           <h4>Suscríbete a nuestro boletín</h4>
-          <p>Obtén actualizaciones sobre nosotros.  </p>
+          <p class="font-clean">Obtén actualizaciones sobre nosotros.  </p>
           <form action="forms/suscribe.php" method="post" role="form" class="php-suscribe">
             <div class="form-group">                
               <input type="email" class="form-control" name="email" id="email" data-rule="email" data-msg="Introduce un Email válido" />
@@ -211,30 +207,33 @@
 
       <div class="col-lg-5 col-md-6 footer-contact" data-aos="fade-up" data-aos-delay="100">
         <h3>Peluches Alfa</h3>
-        <p>
-          Toluca <br>
+        <p class="font-clean">
+          Felipe Carrillo Puerto 107 <br>
+          52060 <br> 
+          Xonacatlán <br>
           Estado de México<br>
           México <br><br>
-          <strong>Teléfono:</strong> 722 891 9880<br>
-          <strong>Email:</strong> alfapeluches@gmail.com<br>
         </p>
+          <strong>Teléfono:</strong> <span class="font-clean">722 891 9880</span><br>
+          <strong>Email:</strong> <span class="font-clean">alfapeluches@gmail.com</span><br>
+        
       </div>
 
       <div class="col-lg-4 col-md-6 footer-links" data-aos="fade-up" data-aos-delay="200">
         <h4>Enlaces útiles</h4>
         <ul>
-          <li><i class="bx bx-chevron-right"></i> <a href="#">Inicio</a></li>
-          <li><i class="bx bx-chevron-right"></i> <a href="#">Quiénes somos</a></li>
-          <li><i class="bx bx-chevron-right"></i> <a href="#">Mayoreo</a></li>
-          <li><i class="bx bx-chevron-right"></i> <a href="#">Proyectos</a></li>
-          <li><i class="bx bx-chevron-right"></i> <a href="#">Tienda Física</a></li>
-          <li><i class="bx bx-chevron-right"></i> <a href="#">Contacto</a></li>
+          <li><i class="bx bx-chevron-right"></i> <a href="index.html#hero">Inicio</a></li>
+          <li><i class="bx bx-chevron-right"></i> <a href="index.html#about">Quiénes somos</a></li>
+          <li><i class="bx bx-chevron-right"></i> <a href="mayoreo.html">Mayoreo</a></li>
+          <li><i class="bx bx-chevron-right"></i> <a href="proyectos.html">Proyectos</a></li>
+          <li><i class="bx bx-chevron-right"></i> <a href="tienda.html">Tienda Física</a></li>
+          <li><i class="bx bx-chevron-right"></i> <a href="contacto.html">Contacto</a></li>
         </ul>
       </div>
 
       <div class="col-lg-2 col-md-6 footer-links" data-aos="fade-up" data-aos-delay="400">
         <h4>Nuestras Redes Sociales</h4>
-        <p>¡Síguenos en nuestras Redes Sociales! para estar siempre al día de nuestras actividades.</p>
+        <p class="font-clean">¡Síguenos en nuestras Redes Sociales!</p>
         <div class="social-links mt-3">
           <a href="https://www.facebook.com/peluchesalfa" target="_blank" class="facebook"><i class="bx bxl-facebook"></i></a>
           <a href="https://www.instagram.com/alfapeluches" target="_blank" class="instagram"><i class="bx bxl-instagram"></i></a>
@@ -245,10 +244,10 @@
   </div>
 </div>
 
-<div class="container py-4">
+<div class="container py-4 font-clean">
   <div id="copy" class="copyright">        
   </div>
-  <div class="credits">
+  <div class="credits font-clean">
     <!-- All the links in the footer should remain intact. -->
     <!-- You can delete the links only if you purchased the pro version. -->
     <!-- Licensing information: https://bootstrapmade.com/license/ -->
