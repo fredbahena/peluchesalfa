@@ -125,6 +125,10 @@
 
   function php_email_form_submit(this_form, action, data) {
     document.location = action;
+    setTimeout(function(){ 
+      //Espera 3 segundos
+     }, 3000);
+    this_form.find('.loading').slideUp();
   }
 
 })(jQuery);
