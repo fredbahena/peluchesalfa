@@ -4,20 +4,21 @@
     $msg = '';
 
     //Read the url
-    $url = '../assets/catalogo/peluches_alfa_2021.pdf';
+    $fileName = basename('peluches_alfa_2021.pdf');
+    $url = '../assets/catalogo/'.$fileName;
 
     //Clear the cache
     clearstatcache();
 
     //Check the file path exists or not
-    if(file_exists($url)) {
+    if(!empty($fileName) && file_exists($url)) {
 
-        //Define header information
-        header('Content-Description: File Transfer');
-        header('Content-Type: application/octet-stream');
-        header('Content-Disposition: attachment; filename="'.basename($url).'"');
-        header('Content-Length: ' . filesize($url));
-        header('Pragma: public');
+        // Define headers
+        header("Cache-Control: public");
+        header("Content-Description: File Transfer");
+        header("Content-Disposition: attachment; filename=$fileName");
+        header("Content-Type: application/pdf");
+        header("Content-Transfer-Encoding: binary");
 
         //Clear system output buffer
         flush();
