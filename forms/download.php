@@ -4,7 +4,7 @@
     $msg = '';
 
     //Read the url
-    $url = 'assets/catalogo/peluches_alfa_2021.pdf';
+    $url = '../assets/catalogo/peluches_alfa_2021.pdf';
 
     //Clear the cache
     clearstatcache();
