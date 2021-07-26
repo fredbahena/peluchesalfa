@@ -11,7 +11,7 @@
   }
 
   $from = $_POST['email']; 
-  $to = 'fred.bahena@gmail.com';
+  $to = 'alfapeluches@gmail.com';
   $subject = "Suscripción"; 
 
   if (!preg_match("/^[_a-z0-9-]+(\.[_a-z0-9-]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,3})$/i", $to)) {
@@ -24,7 +24,7 @@
     
     $email_subject = "Peluches Alfa - $subject :: $from";
     $email_message = "Recibiste una nueva solicitud de suscripción. Aquí los detalles:".
-    "\n Email: $from \n Mensaje: \n $message"; 
+    "\n Email: $from "; 
     
     $headers = "From: $from"; 
         

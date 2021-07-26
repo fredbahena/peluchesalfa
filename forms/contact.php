@@ -15,7 +15,7 @@
 
   $from = $_POST['email']; 
   $name = $_POST['name']; 
-  $to = 'fred.bahena@gmail.com';
+  $to = 'alfapeluches@gmail.com';
   $subject = $_POST['subject']; 
   $message = $_POST['message']; 
 
