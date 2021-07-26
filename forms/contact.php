@@ -15,7 +15,7 @@
 
   $from = $_POST['email']; 
   $name = $_POST['name']; 
-  $to = 'alfapeluches@gmail.com';
+  $to = 'fred.bahena@gmail.com';
   $subject = $_POST['subject']; 
   $message = $_POST['message']; 
 
@@ -27,7 +27,7 @@
 
   if( $errors == 0 ) {
     
-    $email_subject = "Peluches Alfa - $subject :: $name";
+    $email_subject = "Peluches Alfa - Contacto - $subject :: $name";
     $email_message = "Recibiste un nuevo mensaje. Aquí los detalles:".
     "\n Nombre: $name \n Email: $from \n Mensaje: \n $message"; 
     

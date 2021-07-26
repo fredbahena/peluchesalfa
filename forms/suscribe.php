@@ -1,37 +1,42 @@
 <?php
-  /**
-  * Requires the "PHP Email Form" library
-  * The "PHP Email Form" library is available only in the pro version of the template
-  * The library should be uploaded to: vendor/php-email-form/php-email-form.php
-  * For more info and help: https://bootstrapmade.com/php-email-form/
-  */
 
-  // Replace contact@example.com with your real receiving email address
-  $receiving_email_address = 'contact@example.com';
-
-  if( file_exists($php_email_form = '../assets/vendor/php-email-form/php-email-form.php' )) {
-    include( $php_email_form );
-  } else {
-    die( 'Unable to load the "PHP Email Form" Library!');
+  $errors = 0;
+  $msg = '';
+  
+  if( empty($_POST['email']))
+  {
+    $msg = 'Error: El campo Email es requerido';
+    die( $msg );
+    $errors += 1;
   }
 
-  $contact = new PHP_Email_Form;
-  $contact->ajax = true;
-  
-  $contact->to = $receiving_email_address;
-  $contact->from_email = $_POST['email'];
-  
-  // Uncomment below code if you want to use SMTP to send emails. You need to enter your correct SMTP credentials
-  /*
-  $contact->smtp = array(
-    'host' => 'example.com',
-    'username' => 'example',
-    'password' => 'pass',
-    'port' => '587'
-  );
-  */
-  
-  $contact->add_message( $_POST['email'], 'Email');
-  
-  echo $contact->send();
+  $from = $_POST['email']; 
+  $to = 'fred.bahena@gmail.com';
+  $subject = "Suscripción"; 
+
+  if (!preg_match("/^[_a-z0-9-]+(\.[_a-z0-9-]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,3})$/i", $to)) {
+    $msg = 'Error: Correo electrónico no válido';
+    die( $msg );
+    $errors += 1;
+  }
+
+  if( $errors == 0 ) {
+    
+    $email_subject = "Peluches Alfa - $subject :: $from";
+    $email_message = "Recibiste una nueva solicitud de suscripción. Aquí los detalles:".
+    "\n Email: $from \n Mensaje: \n $message"; 
+    
+    $headers = "From: $from"; 
+        
+    mail($to,$email_subject,$email_message,$headers);
+
+    $msg = 'OK';
+    echo $msg;
+    
+  } else {
+
+    echo $msg;
+
+  }
+    
 ?>
