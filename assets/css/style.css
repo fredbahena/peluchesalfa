@@ -2047,6 +2047,10 @@ section {
   font-size: 18px;
 }
 
+#footer .footer-newsletter .form-control {
+  font-size: 14px;
+}
+
 #footer .footer-newsletter h4 {
   font-size: 24px;
   margin: 0 0 20px 0;

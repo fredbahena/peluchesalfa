@@ -119,9 +119,14 @@
           <p class="font-clean">Obtén actualizaciones sobre nosotros.  </p>
           <form action="forms/suscribe.php" method="post" role="form" class="php-suscribe">
             <div class="form-group">                
-              <input type="email" class="form-control" name="email" id="email" data-rule="email" data-msg="Introduce un Email válido" />
+              <input type="email" class="form-control font-clean" name="email" id="email" data-rule="email" data-msg="Introduce un Email válido" />
               <div class="validate"></div>
-            </div>            
+            </div>   
+            <div class="mb-3">
+              <div class="loading">Cargando...</div>
+              <div class="error-message"></div>
+              <div class="sent-message">Tu suscripción se ha solicitado correctamente. ¡Gracias!</div>
+            </div>         
             <input type="submit" value="Suscríbete">
           </form>
         </div>
