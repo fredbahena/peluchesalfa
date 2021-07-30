@@ -17,10 +17,7 @@
      
       var i = $(this); // current input
       var rule = i.attr('data-rule');
-      console.log(i);
-      console.log(rule);
       
-
       if (rule !== undefined) {
         var ierror = false; // error flag for current input
         var pos = rule.indexOf(':', 0);
@@ -104,6 +101,7 @@
       data: data,
       timeout: 40000
     }).done( function(msg){
+      console.log('done',msg);
       if (msg.trim() == 'OK') {
         this_form.find('.loading').slideUp();
         this_form.find('.sent-message').slideDown();
@@ -111,25 +109,27 @@
       } else {
         this_form.find('.loading').slideUp();
         if(!msg) {
-          msg = 'Form submission failed and no error message returned from: ' + action + '<br>';
-        }
+          msg = 'No se pudo realizar la suscripción (no se identificó algún error), inténtalo más tarde por favor.';
+        } else {
+          msg = 'No se pudo realizar la suscripción, inténtalo más tarde por favor.';
+        }        
         this_form.find('.error-message').slideDown().html(msg);
       }
     }).fail( function(data){
-      console.log(data);
-      var error_msg = "Form submission failed!<br>";
+      console.log('fail',data);
+      var error_msg = "Se presentó un error al enviar el formulario";
       if(data.statusText || data.status) {
-        error_msg += 'Status:';
+        //error_msg += 'Status:';
         if(data.statusText) {
-          error_msg += ' ' + data.statusText;
+          //error_msg += ' ' + data.statusText;
         }
         if(data.status) {
-          error_msg += ' ' + data.status;
+          //error_msg += ' ' + data.status;
         }
-        error_msg += '<br>';
+        //error_msg += '<br>';
       }
       if(data.responseText) {
-        error_msg += data.responseText;
+        //error_msg += data.responseText;
       }
       this_form.find('.loading').slideUp();
       this_form.find('.error-message').slideDown().html(error_msg);

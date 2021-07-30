@@ -27,11 +27,20 @@
     "\n Email: $from "; 
     
     $headers = "From: $from"; 
+    
+    try {
+      if (mail($to,$email_subject,$email_message,$headers)){
+        $msg = 'OK';
+        echo $msg;
+      } else {
+        $msg = "No se pudo realizar la suscripción, inténtalo más tarde por favor.";
+        echo $msg;
+        $errors += 1;
+      }      
+    } catch (Exception $e) {
         
-    mail($to,$email_subject,$email_message,$headers);
-
-    $msg = 'OK';
-    echo $msg;
+        $errors += 1;
+    }
     
   } else {
 
