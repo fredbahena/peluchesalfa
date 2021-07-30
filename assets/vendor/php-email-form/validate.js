@@ -130,7 +130,7 @@
       data: data,
       timeout: 40000
     }).done( function(msg){      
-      console.log(msg);
+      console.log('done',msg);
       if (msg.trim() == 'OK') {
         this_form.find('.loading').slideUp();
         this_form.find('.sent-message').slideDown();
@@ -138,25 +138,27 @@
       } else {
         this_form.find('.loading').slideUp();
         if(!msg) {
-          msg = 'El envío del formulario falló, por favor inténtalo más tarde<br>';
+          msg = 'No se pudo enviar el mensaje (no se identificó algún error), inténtalo más tarde por favor.';
+        } else {
+          msg = 'No se pudo enviar el mensaje, inténtalo más tarde por favor.';
         }
         this_form.find('.error-message').slideDown().html(msg);
       }
     }).fail( function(data){
-      console.log(data);
-      var error_msg = "¡El envío del formulario falló!<br>";
+      console.log('fail',data);
+      var error_msg = "Se presentó un error al enviar el formulario";
       if(data.statusText || data.status) {
-        error_msg += 'Status:';
+        //error_msg += 'Status:';
         if(data.statusText) {
-          error_msg += ' ' + data.statusText;
+          //error_msg += ' ' + data.statusText;
         }
         if(data.status) {
-          error_msg += ' ' + data.status;
+          //error_msg += ' ' + data.status;
         }
-        error_msg += '<br>';
+        //error_msg += '<br>';
       }
       if(data.responseText) {
-        error_msg += data.responseText;
+        //error_msg += data.responseText;
       }
       this_form.find('.loading').slideUp();
       this_form.find('.error-message').slideDown().html(error_msg);

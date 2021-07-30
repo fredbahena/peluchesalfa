@@ -33,10 +33,19 @@
     
     $headers = "From: $from"; 
         
-    mail($to,$email_subject,$email_message,$headers);
-
-    $msg = 'OK';
-    echo $msg;
+    try {
+      if (mail($to,$email_subject,$email_message,$headers)){
+        $msg = 'OK';
+        echo $msg;
+      } else {
+        $msg = "No se pudo enviar el mensaje, inténtalo más tarde por favor.";
+        die ( $msg );
+        $errors += 1;
+      }      
+    } catch (Exception $e) {
+        
+        $errors += 1;
+    }
     
   } else {
 
